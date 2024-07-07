@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="Client-Server_Telebid:war111">
+    <output-path>$PROJECT_DIR$/out/artifacts/Client_Server_Telebid_war111</output-path>
+    <root id="archive" name="Client-Server_Telebid_war111.war">
+      <element id="artifact" artifact-name="Client-Server_Telebid:war exploded" />
+    </root>
+  </artifact>
+</component>
