@@ -2,10 +2,10 @@ package com.example.controller;
 
 import org.example.Models.User;
 import org.example.repository.UserDatabase;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import org.example.controller.LoginServlet;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

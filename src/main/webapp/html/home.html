@@ -3,10 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <script src="../js/home.js" defer></script>
 </head>
 <body>
-    <h1>Welcome, <%= ((User) session.getAttribute("user")).getFirstName() %></h1>
-    <a href="update.html">Update Profile</a>
-    <a href="logout">Logout</a>
+<h1>Welcome, <span id="userFirstName"></span></h1>
+<a href="update.html">Update Profile</a>
+
+<form action="/logout" method="post" style="display:inline;">
+    <button type="submit">Logout</button>
+</form>
 </body>
 </html>

@@ -1,20 +1,23 @@
 package org.example.controller;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 import org.example.Models.User;
 import org.example.repository.UserDatabase;
 
 
-import java.io.IOException;
-
-
-@WebServlet("/register")
+@WebServlet({"/register"})
 public class RegisterServlet extends HttpServlet {
     private UserDatabase userDatabase = new UserDatabase();
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("/html/register.html").forward(request, response);
+    }
 
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");
@@ -30,9 +33,9 @@ public class RegisterServlet extends HttpServlet {
             user.setLastName(lastName);
             user.setPassword(password);
             userDatabase.save(user);
-            response.sendRedirect("html/home.html");
+            response.sendRedirect("/html/home.html");
         } else {
-            response.sendRedirect("html/register.html");
+            response.sendRedirect("/html/register.html");
         }
     }
 }
