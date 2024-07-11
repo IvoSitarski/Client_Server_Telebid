@@ -2,6 +2,7 @@ package org.example.controller;
 
 import org.example.Models.User;
 import org.example.repository.UserDatabase;
+import org.mindrot.jbcrypt.BCrypt;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -34,15 +35,28 @@ public class UpdateServlet extends HttpServlet {
         HttpSession session = request.getSession();
         User user = (User) session.getAttribute("user");
 
-        String firstName = request.getParameter("firstName");
-        String lastName = request.getParameter("lastName");
-        String password = request.getParameter("password");
+        if(session==null || user==null){
+            response.sendRedirect("/html/login.html");
+        }
 
-        user.setFirstName(firstName);
-        user.setLastName(lastName);
-        user.setPassword(password);
+        try {
+            String firstName = request.getParameter("firstName");
+            String lastName = request.getParameter("lastName");
+            String password = request.getParameter("password");
 
-        userDatabase.update(user);
-        response.sendRedirect("/html/home.html");
+            user.setFirstName(firstName);
+            user.setLastName(lastName);
+
+            if (password != null && !password.isEmpty()) {
+                String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+                user.setPassword(hashedPassword);
+            }
+
+            userDatabase.update(user);
+
+            response.sendRedirect("/html/home.html");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 }

@@ -9,6 +9,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import org.example.Models.User;
 import org.example.repository.UserDatabase;
+import org.mindrot.jbcrypt.BCrypt;
 
 @WebServlet({"/login"})
 public class LoginServlet extends HttpServlet {
@@ -19,7 +20,7 @@ public class LoginServlet extends HttpServlet {
         String password = request.getParameter("password");
 
         User user = userDatabase.findByEmail(email);
-        if (user != null && user.getPassword().equals(password)) {
+        if (user != null && BCrypt.checkpw(password, user.getPassword())) {
             HttpSession session = request.getSession();
             session.setAttribute("user", user);
             response.sendRedirect("html/home.html");

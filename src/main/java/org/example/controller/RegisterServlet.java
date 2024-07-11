@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import org.example.Models.User;
 import org.example.repository.UserDatabase;
+import org.mindrot.jbcrypt.BCrypt;
 
 
 @WebServlet({"/register"})
@@ -27,11 +28,13 @@ public class RegisterServlet extends HttpServlet {
 
         User existingUser = userDatabase.findByEmail(email);
         if (existingUser == null) {
+            String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+
             User user = new User();
             user.setEmail(email);
             user.setFirstName(firstName);
             user.setLastName(lastName);
-            user.setPassword(password);
+            user.setPassword(hashedPassword);
             userDatabase.save(user);
             response.sendRedirect("/html/login.html");
         } else {
