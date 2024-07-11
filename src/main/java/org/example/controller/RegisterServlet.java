@@ -33,7 +33,7 @@ public class RegisterServlet extends HttpServlet {
             user.setLastName(lastName);
             user.setPassword(password);
             userDatabase.save(user);
-            response.sendRedirect("/html/home.html");
+            response.sendRedirect("/html/login.html");
         } else {
             response.sendRedirect("/html/register.html");
         }

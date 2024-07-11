@@ -3,14 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Home</title>
+    <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/home.js" defer></script>
 </head>
 <body>
-<h1>Welcome, <span id="userFirstName"></span></h1>
-<a href="update.html">Update Profile</a>
-
-<form action="/logout" method="post" style="display:inline;">
-    <button type="submit">Logout</button>
-</form>
+    <div class="container-home">
+        <h1>Welcome, <span id="userFirstName"></span></h1>
+        <div class="button-container">
+            <a href="/html/update.html" class="button">Update Profile</a>
+            <form action="/logout" method="post" class="inline-form">
+                <button type="submit" class="button">Logout</button>
+            </form>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,41 +1,246 @@
+
 body {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f4f4f4;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
 }
 
-form {
-    background: #fff;
+a {
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding: 20px;
-    border-radius: 5px;
+    background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
 }
 
-input {
-    display: block;
+.login-form input[type="email"],
+.login-form input[type="password"] {
     width: 100%;
     padding: 10px;
-    margin-bottom: 10px;
+    margin: 10px 0;
     border: 1px solid #ccc;
-    border-radius: 5px;
+    border-radius: 4px;
 }
 
-button {
-    display: block;
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
     width: 100%;
+    margin-top: 25px;
+}
+
+.login-button, .cancel-button {
+    flex: 1;
     padding: 10px;
-    background: #007bff;
     color: #fff;
     border: none;
-    border-radius: 5px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 8px;
+}
+
+.login-button {
+    background-color: green;
+}
+
+.login-button:hover {
+    background-color: darkgreen;
+}
+
+.login-form .cancel-button {
+    background-color: red;
+    text-decoration: none;
+}
+
+.cancel-button:hover {
+    background-color: darkred;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.register-form input[type="email"],
+.register-form input[type="text"],
+.register-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.register-form button {
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.register-button{
+    background-color: green;
+}
+
+.register-button:hover {
+    background-color: darkgreen;
+}
+
+.register-form .cancel-button {
+    background-color: red;
+}
+
+.register-form .cancel-button:hover {
+    background-color: darkred;
+}
+
+.update-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.update-form input[type="text"],
+.update-form input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.update-form button {
+    width: 100%;
+    padding: 10px;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.update-form .update-button{
+    background-color: green;
+}
+
+.update-form .update-button:hover {
+    background-color: darkgreen;
+}
+
+.update-form .cancel-button{
+    background-color: red;
+}
+
+.update-form .cancel-button:hover {
+    background-color: darkred;
+}
+
+.container-home {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.container-home h1 {
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
     cursor: pointer;
 }
 
-button:hover {
-    background: #0056b3;
+.button:hover {
+    background-color: #0056b3;
+}
+
+.inline-form {
+    display: inline;
+}
+
+.container-welcome {
+    text-align: center;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.container-welcome h1 {
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #0056b3;
 }
