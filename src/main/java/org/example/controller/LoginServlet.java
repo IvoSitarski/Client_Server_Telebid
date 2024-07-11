@@ -15,6 +15,13 @@ import org.mindrot.jbcrypt.BCrypt;
 public class LoginServlet extends HttpServlet {
     private UserDatabase userDatabase=new UserDatabase();
 
+    public LoginServlet() {
+    }
+
+    public LoginServlet(UserDatabase userDatabase) {
+        this.userDatabase = userDatabase;
+    }
+
     public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String email = request.getParameter("email");
         String password = request.getParameter("password");

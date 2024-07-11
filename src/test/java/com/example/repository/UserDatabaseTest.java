@@ -25,7 +25,6 @@ public class UserDatabaseTest {
         preparedStatement = mock(PreparedStatement.class);
         resultSet = mock(ResultSet.class);
 
-        // Мокване на връзката и инжектиране в userDatabase
         userDatabase.setConnection(connection);
         when(connection.prepareStatement(anyString())).thenReturn(preparedStatement);
         when(preparedStatement.executeQuery()).thenReturn(resultSet);

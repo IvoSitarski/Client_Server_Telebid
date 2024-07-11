@@ -15,6 +15,10 @@ import org.mindrot.jbcrypt.BCrypt;
 public class RegisterServlet extends HttpServlet {
     private UserDatabase userDatabase = new UserDatabase();
 
+    public void setUserDatabase(UserDatabase userDatabase) {
+        this.userDatabase = userDatabase;
+    }
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/html/register.html").forward(request, response);
